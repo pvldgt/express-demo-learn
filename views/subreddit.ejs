@@ -1,0 +1,34 @@
+<%- include("partials/head")%>
+
+
+    <%- include("partials/navbar")%>
+        <div class="container">
+            <h1>Browsing through the <%=name.toUpperCase() %> subreddit
+            </h1>
+            <h2>
+                <%=description%>
+            </h2>
+            <h3>
+                The number of subscribers is <%=subscribers%>
+            </h3>
+            <hr>
+            <div>
+                <%for (let post of posts) {%>
+                    <article>
+                        <p>
+                            The author: <%=post.author%>
+                        </p>
+                        <h4>
+                            <%=post.title%>
+                        </h4>
+
+                        <%if (post.img) {%>
+                            <img src=<%=post.img %> alt="post image">
+                            <%}%>
+
+                    </article>
+                    <%}%>
+            </div>
+        </div>
+
+        <%- include("partials/footer")%>
